@@ -16,7 +16,7 @@ Sprites platform.
 - **Registry:** [`dev.sprites/mcp`](https://registry.modelcontextprotocol.io/v0/servers?search=dev.sprites/mcp) in the official MCP registry
 - **Docs:** https://docs.sprites.dev/integrations/remote-mcp/
 
-[![Add sprites MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=sprites&config=eyJ1cmwiOiJodHRwczovL3Nwcml0ZXMuZGV2L21jcCJ9)
+[![Add sprites MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=sprites&config=eyJ1cmwiOiJodHRwczovL3Nwcml0ZXMuZGV2L21jcCJ9)
 
 ## What is Sprites?
 
