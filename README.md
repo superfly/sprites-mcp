@@ -16,6 +16,8 @@ Sprites platform.
 - **Registry:** [`dev.sprites/mcp`](https://registry.modelcontextprotocol.io/v0/servers?search=dev.sprites/mcp) in the official MCP registry
 - **Docs:** https://docs.sprites.dev/integrations/remote-mcp/
 
+[![Add sprites MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=sprites&config=eyJ1cmwiOiJodHRwczovL3Nwcml0ZXMuZGV2L21jcCJ9)
+
 ## What is Sprites?
 
 A Sprite is an isolated, persistent compute environment. You can create one, execute commands
@@ -37,6 +39,23 @@ claude mcp add --transport http sprites https://sprites.dev/mcp
 ```
 
 Then run `/mcp` inside Claude Code to complete the OAuth login.
+
+### Cursor
+
+Click the **Add sprites MCP server to Cursor** button above, or add it manually to
+`~/.cursor/mcp.json` (global) or `.cursor/mcp.json` (per project):
+
+```json
+{
+  "mcpServers": {
+    "sprites": {
+      "url": "https://sprites.dev/mcp"
+    }
+  }
+}
+```
+
+Cursor will prompt you to authorize via OAuth on first use.
 
 ### Claude Desktop / other HTTP-native clients
 
