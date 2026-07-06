@@ -183,3 +183,7 @@ automatically. The manifest lives in [`server.json`](./server.json).
 This repo contains public listing metadata and documentation only. The MCP server is
 implemented as part of the Sprites platform and served remotely at `https://sprites.dev/mcp` —
 there is no server code to run here.
+
+## License
+
+[MIT](./LICENSE) © Fly.io, Inc.
