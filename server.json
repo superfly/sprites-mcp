@@ -1,8 +1,14 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "dev.sprites/mcp",
+  "title": "Sprites MCP Server",
   "description": "Manage Sprites: sandboxed compute environments with exec, services, and checkpoints.",
-  "version": "1.0.0",
+  "websiteUrl": "https://sprites.dev",
+  "repository": {
+    "url": "https://github.com/superfly/sprites-mcp",
+    "source": "github"
+  },
+  "version": "1.0.1",
   "remotes": [
     {
       "type": "streamable-http",
