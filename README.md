@@ -40,6 +40,25 @@ claude mcp add --transport http sprites https://sprites.dev/mcp
 
 Then run `/mcp` inside Claude Code to complete the OAuth login.
 
+### Kiro CLI
+
+Add Sprites as a global MCP server:
+
+```bash
+kiro-cli mcp add \
+  --name sprites \
+  --scope global \
+  --url https://sprites.dev/mcp
+```
+
+Then start Kiro with `kiro-cli chat`. Kiro completes OAuth using dynamic client registration;
+if authentication does not start automatically, run `/mcp auth sprites` inside the chat.
+
+Use `--scope workspace` instead to limit the connection to the current project. On the Sprites
+consent screen, restrict the grant to the smallest useful sprite-name prefix, sprite count, and
+expiry. Custom Kiro agents can narrow access further by listing only the `@sprites/...` tools
+required for their role.
+
 ### Cursor
 
 Click the **Add sprites MCP server to Cursor** button above, or add it manually to
