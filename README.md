@@ -117,7 +117,7 @@ expiry. Restrictions are enforced on every call.
 
 ## Tools
 
-18 tools, grouped below. Access is **read** (safe, read-only) or **write** (creates, mutates, or
+24 tools, grouped below. Access is **read** (safe, read-only) or **write** (creates, mutates, or
 executes). Every sprite-scoped tool takes a required `sprite` parameter naming the target sprite.
 
 ### Sprite management
@@ -135,6 +135,20 @@ executes). Every sprite-scoped tool takes a required `sprite` parameter naming t
 | `exec` | write | Run a command inside a sprite (non-TTY HTTP exec). |
 | `exec_list` | read | List active exec sessions. |
 | `exec_kill` | write | Kill an exec session by ID. |
+
+### Files
+
+Read and manipulate files in a sprite's filesystem. Paths resolve against `workingDir`, and all
+access is confined to the sprite's root (symlinks are followed but cannot escape it).
+
+| Tool | Access | Description |
+| --- | --- | --- |
+| `file_read` | read | Read a file's contents. Returns an embedded text or binary resource. |
+| `file_list` | read | List the entries of a directory. |
+| `file_write` | write | Write contents to a file. |
+| `file_copy` | write | Copy a file or directory. |
+| `file_rename` | write | Rename or move a file or directory. |
+| `file_delete` | write | Delete a file or directory. |
 
 ### Checkpoints
 
@@ -176,6 +190,21 @@ Common: every sprite-scoped tool requires `sprite` (string) — the target sprit
   `dir` (string, optional).
 - **`exec_kill`** — `session_id` (string, **required**), `signal` (string, optional, default
   `SIGTERM`), `timeout` (string, optional, default `10s`).
+- **`file_read`** — `path` (string, **required**), `workingDir` (string, **required**),
+  `encoding` (string, optional, `utf8` (default) or `base64`; `utf8` returns an embedded text
+  resource, `base64` an embedded binary resource).
+- **`file_list`** — `path` (string, **required**), `workingDir` (string, **required**).
+- **`file_write`** — `path` (string, **required**), `workingDir` (string, **required**),
+  `content` (string, **required**; literal text for `utf8`, base64-encoded bytes for `base64`),
+  `encoding` (string, optional, `utf8` (default) or `base64`), `mode` (string, optional, octal
+  e.g. `0644`), `mkdir` (boolean, optional — create parent directories).
+- **`file_copy`** — `source` (string, **required**), `dest` (string, **required**), `workingDir`
+  (string, **required**), `recursive` (boolean, **required**), `preserveAttrs` (boolean,
+  **required**), `asRoot` (boolean, **required**).
+- **`file_rename`** — `source` (string, **required**), `dest` (string, **required**),
+  `workingDir` (string, **required**), `asRoot` (boolean, **required**).
+- **`file_delete`** — `path` (string, **required**), `workingDir` (string, **required**),
+  `recursive` (boolean, **required**), `asRoot` (boolean, **required**).
 - **`checkpoint_create`** — `comment` (string, optional).
 - **`checkpoint_get`** — `checkpoint_id` (string, **required**, e.g. `v7`).
 - **`checkpoint_restore`** — `checkpoint_id` (string, **required**).
