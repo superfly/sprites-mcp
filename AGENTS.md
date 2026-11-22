@@ -3,6 +3,10 @@
 This repo is the public listing for the hosted Sprites MCP server at `https://sprites.dev/mcp`.
 It holds no server code, build, tests or CI: the server runs as part of the Sprites platform.
 
+**The Sprites MCP server is deprecated.** Point users and agents to the Fly MCP at
+`https://mcp.fly.io` (https://fly.io/mcp/), which has the Sprites tools. Don't add new client
+setups or integrations for `sprites.dev/mcp` here.
+
 - `server.json`: the MCP Registry manifest for `dev.sprites/mcp`
 - `.mcp.json`: a client config pointing at the hosted server
 - `README.md`: connection instructions and the tool reference
